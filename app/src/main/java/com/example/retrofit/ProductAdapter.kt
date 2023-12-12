@@ -12,8 +12,10 @@ import com.example.retrofit.databinding.ItemProductsBinding
 
 
 
-class ProductAdapter() : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
-    inner class ProductViewHolder(val binding: ItemProductsBinding): RecyclerView.ViewHolder(binding.root)
+class ProductAdapter(private val fragmentManager: FragmentManager) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+    inner class ProductViewHolder(val binding: ItemProductsBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
     private val diffCallback = object : DiffUtil.ItemCallback<Products>() {
         override fun areItemsTheSame(oldItem: Products, newItem: Products): Boolean {
             return oldItem.id == newItem.id
@@ -24,19 +26,21 @@ class ProductAdapter() : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(
         }
     }
 
-    private val differ = AsyncListDiffer(this,diffCallback)
+    private val differ = AsyncListDiffer(this, diffCallback)
     var products: List<Products>?
         get() = differ.currentList
         set(value) {
-           differ.submitList(value)
+            differ.submitList(value)
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        return ProductViewHolder(ItemProductsBinding.inflate(
-          LayoutInflater.from(parent.context),
-            parent,
-            false
-        ))
+        return ProductViewHolder(
+            ItemProductsBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount() = products!!.size
@@ -47,14 +51,32 @@ class ProductAdapter() : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(
             tvtitle.text = product?.title
             tvrating.text = product?.rating.toString()
             tvprice.text = product?.price.toString()
+            val stock = product?.stock
+            if (stock != null) {
+                if(stock>0) tvstock.text = "In Stock"
+            }else{
+                tvstock.text = "Out of Stock"
+            }
             // Load thumbnail image using Glide
             Glide.with(root.context)
                 .load(product?.thumbnail)
-                .placeholder(R.drawable.ic_loading) // You can set a placeholder image
-                .error(R.drawable.ic_loading) // You can set an error image
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_loading)
                 .into(ivThumbnail)
 
+            btnDetails.setOnClickListener {
+                product?.let {
+                    val fragment = DetailsFragment.newInstance(product)
+                    val transaction = fragmentManager.beginTransaction()
+                    val prev = fragmentManager.findFragmentByTag("details_dialog")
+                    if (prev != null) {
+                        transaction.remove(prev)
+                    }
+                    transaction.addToBackStack(null)
+                    fragment.show(transaction, "details_dialog")
+                }
             }
         }
     }
+}
 

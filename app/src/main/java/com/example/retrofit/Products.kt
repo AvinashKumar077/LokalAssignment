@@ -2,7 +2,9 @@ package com.example.retrofit
 
 import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Products(
     val brand: String,
     val category: String,
@@ -15,4 +17,4 @@ data class Products(
     val stock: Int,
     val thumbnail: String,
     val title: String
-)
+):Parcelable
