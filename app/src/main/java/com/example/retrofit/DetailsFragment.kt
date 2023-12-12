@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.retrofit.databinding.FragmentDetailsBinding
 
-class DetailsFragment : DialogFragment() {
+class DetailsFragment : Fragment() {
 
     private var product: Products? = null
     private lateinit var binding: FragmentDetailsBinding
@@ -50,6 +51,9 @@ class DetailsFragment : DialogFragment() {
                 val images = product.images
                 val imageAdapter = ImageAdapter(images)
                 rvProductImage.adapter = imageAdapter
+
+                val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                rvProductImage.layoutManager = layoutManager
             }
         }
     }
