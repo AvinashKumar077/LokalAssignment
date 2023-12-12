@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var productAdapter: ProductAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,8 +46,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() = binding.rvProducts.apply {
-        productAdapter = ProductAdapter()
+        productAdapter = ProductAdapter(supportFragmentManager)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@MainActivity)
     }
+
 }
