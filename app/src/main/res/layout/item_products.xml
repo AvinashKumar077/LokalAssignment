@@ -38,10 +38,11 @@
             android:id="@+id/tvrating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:elevation="4dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/tvstock"
-            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintHorizontal_bias="0.436"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
             tools:text="rating" />
@@ -68,7 +69,6 @@
             android:layout_marginEnd="28dp"
             android:elevation="4dp"
             android:textColor="#008000"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btn_details"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
@@ -98,6 +98,61 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star_1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/star_2"
+            app:layout_constraintBottom_toTopOf="@+id/tvprice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/star" />
+
+        <ImageView
+            android:id="@+id/star_2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toEndOf="@+id/star_1"
+            app:layout_constraintEnd_toStartOf="@+id/star_3"
+            app:layout_constraintBottom_toTopOf="@+id/tvprice"
+            app:srcCompat="@drawable/star"
+            tools:layout_editor_absoluteX="28dp" />
+
+        <ImageView
+            android:id="@+id/star_3"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvprice"
+            app:layout_constraintEnd_toStartOf="@+id/star_4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/star_2"
+            app:srcCompat="@drawable/star" />
+
+        <ImageView
+            android:id="@+id/star_4"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvprice"
+            app:layout_constraintStart_toEndOf="@+id/star_3"
+            app:layout_constraintEnd_toStartOf="@+id/star_5"
+            app:srcCompat="@drawable/star"
+            tools:layout_editor_absoluteX="60dp" />
+
+        <ImageView
+            android:id="@+id/star_5"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvprice"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/star_4"
+            app:srcCompat="@drawable/half_star" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
