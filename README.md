@@ -3,6 +3,9 @@ Lokal Assignment Application
 
 This is a sample Android app demonstrating the use of Retrofit for API calls, View Binding for layout handling, and RecyclerView for displaying a list of products.
 
+Live Link :- 
+=========
+
 Table of Contents
 -----------------
 
@@ -60,7 +63,6 @@ How to Run
 
 Screenshots
 -----------
-
 <p align = center><img src="ss/2.jpg" height = 420></p>
 <p align = center><img src="ss/1.jpg" height = 420></p>
 <p align = center><img src="ss/4.jpg" height = 420></p>
