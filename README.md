@@ -5,7 +5,7 @@ This is a sample Android app demonstrating the use of Retrofit for API calls, Vi
 
 Working Video Link :- 
 ==========
-Video Link :- [Lokal Assigment](https://drive.google.com/file/d/1b1w6khH3xzlwZ0V_FGPzgTfHwgu2RkVY/view?usp=sharing)
+Video Link :- [Lokal Assigment](https://youtu.be/CJthEu1yzP0)
 
 Table of Contents
 -----------------
