@@ -61,7 +61,7 @@ How to Run
 Screenshots
 -----------
 
-<img src="ss/2.jpg" height = 420>
-<img src="ss/1.jpg" height = 420>
-<img src="ss/4.jpg" height = 420>
-<img src="ss/3.jpg" height = 420>
+<p align = center><img src="ss/2.jpg" height = 420></p>
+<p align = center><img src="ss/1.jpg" height = 420></p>
+<p align = center><img src="ss/4.jpg" height = 420></p>
+<p align = center><img src="ss/3.jpg" height = 420></p>
