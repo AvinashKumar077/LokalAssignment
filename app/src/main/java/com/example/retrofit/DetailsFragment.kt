@@ -1,14 +1,13 @@
 package com.example.retrofit
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import com.bumptech.glide.Glide
 import com.example.retrofit.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
@@ -26,22 +25,28 @@ class DetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Populate details on view creation
         populateDetails()
+
+        // Set up click listeners for arrowLeft and arrowRight
         binding.arrowLeft.setOnClickListener {
-            scrollRecyclerView(-1)
+            scrollRecyclerView(-1) //scroll to the left
         }
 
         binding.arrowRight.setOnClickListener {
-            scrollRecyclerView(1)
+            scrollRecyclerView(1) // scroll to the right
         }
     }
+
+    // Function to scroll the RecyclerView in the specified direction
     private fun scrollRecyclerView(direction: Int) {
         val layoutManager = binding.rvProductImage.layoutManager as LinearLayoutManager
         val currentPosition = layoutManager.findFirstVisibleItemPosition()
@@ -52,18 +57,23 @@ class DetailsFragment : Fragment() {
         // Scroll to the target position
         binding.rvProductImage.smoothScrollToPosition(targetPosition)
     }
+
+    @SuppressLint("SetTextI18n")
+
+    // Function to populate details in the UI
     private fun populateDetails() {
         product?.let { product ->
             binding.apply {
 
+                // Set details in the UI
                 pName.text = product.title
                 tvDescription.text = product.description
-                tvDiscount.text = "Discount:   ${product.discountPercentage}%"
-                tvPrice.text = "Price:   $ ${product.price}"
-                tvRating.text = "Rating:   ${product.rating}/5"
-                tvStock.text = "Stock:   ${product.stock}"
-                tvBrand.text = "Brand:   ${product.brand}"
-                tvCategory.text = "Category:   ${product.category}"
+                tvDiscount.text = "${product.discountPercentage}%"
+                tvPrice.text = "$ ${product.price}"
+                tvRating.text = "${product.rating}/5"
+                tvStock.text = product.stock.toString()
+                tvBrand.text = product.brand
+                tvCategory.text = product.category
 
 
                 val images = product.images
