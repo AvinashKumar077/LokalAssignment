@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:text="Show More..."
+            android:text="@string/show_more"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +108,8 @@
             app:layout_constraintEnd_toStartOf="@+id/star_2"
             app:layout_constraintBottom_toTopOf="@+id/tvprice"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/star" />
+            app:srcCompat="@drawable/star"
+           />
 
         <ImageView
             android:id="@+id/star_2"
