@@ -27,7 +27,10 @@ class ImageAdapter(private val images: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bind(images[position])
+        val imageUrl = images.getOrNull(position)
+        if (imageUrl != null) {
+            holder.bind(imageUrl)
+        }
     }
 
     override fun getItemCount(): Int {

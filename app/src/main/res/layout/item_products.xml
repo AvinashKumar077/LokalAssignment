@@ -24,6 +24,7 @@
             android:id="@+id/tvtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:elevation="4dp"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -37,60 +38,54 @@
             android:id="@+id/tvrating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:elevation="4dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/tvstock"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.716"
             tools:text="rating" />
 
         <TextView
             android:id="@+id/tvprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:elevation="4dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.724"
+            app:layout_constraintEnd_toStartOf="@+id/btn_details"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvrating"
+            app:layout_constraintVertical_bias="0.566"
             tools:text="price" />
 
         <TextView
             android:id="@+id/tvstock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
 
-            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="28dp"
             android:elevation="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvrating"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.902"
             android:textColor="#008000"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="Stock" />
 
         <Button
             android:id="@+id/btn_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
             android:backgroundTint="@color/white"
-            android:text="See More >"
-            android:textStyle="bold"
+            android:text="Show More..."
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvstock"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/tvrating" />
 
         <ImageView
             android:id="@+id/ivThumbnail"
@@ -104,26 +99,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/review"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvprice"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.68" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/dollar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
-            app:layout_constraintVertical_bias="0.659" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

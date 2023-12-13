@@ -46,11 +46,15 @@ class ProductAdapter(private val fragmentManager: FragmentManager) : RecyclerVie
     override fun getItemCount() = products!!.size
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+        fun displayStar(){
+
+        }
         holder.binding.apply {
             val product = products?.get(position)
             tvtitle.text = product?.title
+            val starRating = product?.rating
             tvrating.text = product?.rating.toString()
-            tvprice.text = product?.price.toString()
+            tvprice.text = "$ "+product?.price.toString()
             val stock = product?.stock
             if (stock != null) {
                 if(stock>0) tvstock.text = "In Stock"
@@ -67,13 +71,18 @@ class ProductAdapter(private val fragmentManager: FragmentManager) : RecyclerVie
             btnDetails.setOnClickListener {
                 product?.let {
                     val fragment = DetailsFragment.newInstance(product)
-                    val transaction = fragmentManager.beginTransaction()
-                    val prev = fragmentManager.findFragmentByTag("details_dialog")
-                    if (prev != null) {
-                        transaction.remove(prev)
-                    }
-                    transaction.addToBackStack(null)
-                    fragment.show(transaction, "details_dialog")
+
+                    // Use the supportFragmentManager from the MainActivity
+                    val transaction = (root.context as AppCompatActivity)
+                        .supportFragmentManager.beginTransaction()
+
+                    // Set the custom animation
+                    transaction.setCustomAnimations(R.anim.slide_in_bottom, 0, 0, R.anim.slide_out_top)
+
+                    // Replace the existing fragment with the DetailsFragment
+                    transaction.replace(R.id.fragmentContainer, fragment)
+                        .addToBackStack(null)
+                        .commit()
                 }
             }
         }
