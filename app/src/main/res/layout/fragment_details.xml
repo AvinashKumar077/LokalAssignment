@@ -205,7 +205,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="116dp"
-            android:src="@drawable/arrowleft"
+            android:src="@drawable/left_arrow_svgrepo_com"
             app:layout_constraintEnd_toStartOf="@+id/rvProductImage"
             app:layout_constraintHorizontal_bias="0.0"
 
@@ -217,7 +217,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="116dp"
-            android:src="@drawable/arrowright"
+            android:src="@drawable/right_arrow_svgrepo_com"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
 
