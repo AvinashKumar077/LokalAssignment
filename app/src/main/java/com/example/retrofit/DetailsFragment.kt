@@ -41,7 +41,7 @@ class DetailsFragment : Fragment() {
 
                 pName.text = product.title
                 tvDescription.text = product.description
-                tvPrice.text = "Price: ${product.price}"
+                tvPrice.text = "Price: $ ${product.price}"
                 tvRating.text = "Rating: ${product.rating}"
                 tvStock.text = "Stock: ${product.stock}"
                 tvBrand.text = "Brand: ${product.brand}"

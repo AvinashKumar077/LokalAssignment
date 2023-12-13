@@ -46,13 +46,11 @@ class ProductAdapter(private val fragmentManager: FragmentManager) : RecyclerVie
     override fun getItemCount() = products!!.size
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        fun displayStar(){
 
-        }
+
         holder.binding.apply {
             val product = products?.get(position)
             tvtitle.text = product?.title
-            val starRating = product?.rating
             tvrating.text = product?.rating.toString()
             tvprice.text = "$ "+product?.price.toString()
             val stock = product?.stock
