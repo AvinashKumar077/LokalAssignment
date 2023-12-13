@@ -3,8 +3,9 @@ Lokal Assignment Application
 
 This is a sample Android app demonstrating the use of Retrofit for API calls, View Binding for layout handling, and RecyclerView for displaying a list of products.
 
-Live Link :- 
-=========
+Working Video Link :- 
+==========
+Video Link :- [Lokal Assigment](https://drive.google.com/file/d/1b1w6khH3xzlwZ0V_FGPzgTfHwgu2RkVY/view?usp=sharing)
 
 Table of Contents
 -----------------
