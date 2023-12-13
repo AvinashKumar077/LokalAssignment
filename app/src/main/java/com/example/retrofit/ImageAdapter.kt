@@ -8,7 +8,6 @@ import com.example.retrofit.databinding.ItemImageBinding
 
 class ImageAdapter(private val images: List<String>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-
     inner class ImageViewHolder(private val binding: ItemImageBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -27,13 +26,15 @@ class ImageAdapter(private val images: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        val imageUrl = images.getOrNull(position)
+        val actualPosition = position % images.size
+        val imageUrl = images.getOrNull(actualPosition)
         if (imageUrl != null) {
             holder.bind(imageUrl)
         }
     }
 
     override fun getItemCount(): Int {
-        return images.size
+       return Int.MAX_VALUE
     }
+
 }

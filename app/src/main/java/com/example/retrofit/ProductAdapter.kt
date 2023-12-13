@@ -51,11 +51,13 @@ class ProductAdapter(private val fragmentManager: FragmentManager) : RecyclerVie
         holder.binding.apply {
             val product = products?.get(position)
             tvtitle.text = product?.title
-            tvrating.text = product?.rating.toString()
+            tvrating.text = "${product?.rating.toString()}/5"
             tvprice.text = "$ "+product?.price.toString()
             val stock = product?.stock
             if (stock != null) {
-                if(stock>0) tvstock.text = "In Stock"
+                if(stock>0) {
+                    tvstock.text = "In Stock"
+                }
             }else{
                 tvstock.text = "Out of Stock"
             }
