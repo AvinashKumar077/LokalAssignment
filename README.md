@@ -1,17 +1,16 @@
-Retrofit Sample App
-===================
+Lokal Assignment Application
+============================
 
 This is a sample Android app demonstrating the use of Retrofit for API calls, View Binding for layout handling, and RecyclerView for displaying a list of products.
 
 Table of Contents
 -----------------
 
--   [Introduction]
--   [Project Structure]
--   [Dependencies]
--   [How to Run]
--   [Screenshots]
--   [License]
+-   Introduction
+-   Project Structure
+-   Dependencies
+-   How to Run
+-   Screenshots
 
 Introduction
 ------------
@@ -53,7 +52,7 @@ How to Run
 
     bashCopy code
 
-    `git clone https://github.com/your-username/retrofit-sample-app.git`
+    `git clone https://github.com/AvinashKumar077/LokalAssignment.git`
 
 2.  Open the project in Android Studio.
 
@@ -62,3 +61,7 @@ How to Run
 Screenshots
 -----------
 
+<img src="ss/2.jpg" height = 420>
+<img src="ss/1.jpg" height = 420>
+<img src="ss/4.jpg" height = 420>
+<img src="ss/3.jpg" height = 420>
