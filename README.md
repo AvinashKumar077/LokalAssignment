@@ -46,7 +46,7 @@ Dependencies
 The app uses the following dependencies:
 
 -   Retrofit: For making network requests.
--   MOSHI Converter: For parsing JSON responses using Gson.
+-   MOSHI Converter: For parsing JSON responses using moshi.
 -   Glide: For loading and displaying images efficiently.
 
 How to Run
